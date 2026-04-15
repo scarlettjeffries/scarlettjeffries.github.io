@@ -29,15 +29,25 @@ section.home {
 .home-photo {
     width: 240px;
     height: 240px;
+    padding: 8px;
     border-radius: 50%;
-    background: #f4f4f4;
-    border: 4px solid rgba(20, 83, 45, 0.12);
+    overflow: hidden;
+    background: linear-gradient(to left, #14532D, #CCE5C4, #F7C8D7) border-box,
+                #ffffff padding-box;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #666;
-    font-size: 0.95em;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.home-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
 }
 
 section:not(.home) {
@@ -218,18 +228,26 @@ section > div {
 
 .experience-photo,
 .project-photo {
-    flex-shrink: 0;
-    width: 180px;
-    height: 140px;
+    width: 100%;
+    height: 160px;
     border-radius: 14px;
     background: #f4f4f4;
     border: 1px dashed #ccc;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #666;
     font-size: 0.9em;
     margin-bottom: 20px;
+}
+
+.experience-photo img,
+.project-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .experience-card-text h3,
