@@ -4,14 +4,76 @@ body {
     margin-right: 10%;
 }
 
+section.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+}
+
+.home-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.home-text {
+    flex: 1 1 320px;
+    min-width: 280px;
+}
+
+.home-photo {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: #f4f4f4;
+    border: 4px solid rgba(20, 83, 45, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 0.95em;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+section:not(.home) {
+    min-height: auto;
+    display: block;
+}
+
+section > div {
+    width: 100%;
+}
+
+.section-row {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.section-row section {
+    width: 100%;
+    display: block;
+}
+
+.section-row section > div {
+    width: 100%;
+}
+
 .home h2 {
-    margin-top: 15%;
+    margin-top: 0;
     font-size: 4em;
     line-height: 1;
     background-image: linear-gradient(to right, #14532D, #CCE5C4, #F7C8D7);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-size: 15%;
+    background-size: 100%;
 }
 
 .home h1 {
@@ -22,24 +84,34 @@ body {
 .home p {
     margin-right: 60%;
 }
-#learn-more {
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.gradient-button {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 10em;
-    height: 3em;
-    font-size: 1em;
-    font-weight: semi-bold;
+    width: auto;
+    min-width: 7.5em;
+    height: 2.6em;
+    padding: 0 1.1em;
+    font-size: 0.95em;
+    font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
     border: 3px solid transparent;
-    border-radius: 3em;
+    border-radius: 2.5em;
     background: white;
     z-index: 1;
     overflow: hidden;
+    cursor: pointer;
 }
 
-#learn-more::before {
+.gradient-button::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -59,21 +131,199 @@ body {
     filter: blur(20px); /* optional: blur(15px) for glow */
 }
 
-#learn-more span {
+.gradient-button span {
     background: linear-gradient(to left, #14532D, #CCE5C4, #F7C8D7);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
 }
 
-#linkedin-button {
-    background-image: url(/assets/Linkedin_logo.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+.contact button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14em;
+    height: 3em;
+    font-size: 1em;
+    font-weight: semi-bold;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid transparent;
+    border-radius: 3em;
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    margin: 5px;
 }
-#github-button {
-    background-image: url(/assets/Github_logo.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+
+.contact button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    padding: 3px; /* thickness of the "border" */
+    border-radius: inherit;
+    background: linear-gradient(to left, #14532D, #CCE5C4, #F7C8D7);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    filter: blur(20px); /* optional: blur(15px) for glow */
+}
+
+.contact button span {
+    color: black;
+    font-size: 0.8em;
+}
+
+.experience-row,
+.project-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 30px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.experience-link,
+.project-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    text-align: center;
+}
+
+.experience-link:hover,
+.project-link:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-2px);
+}
+
+.experience-photo,
+.project-photo {
+    flex-shrink: 0;
+    width: 180px;
+    height: 140px;
+    border-radius: 14px;
+    background: #f4f4f4;
+    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.experience-card-text h3,
+.project-card-text h3 {
+    margin: 0 0 8px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.experience-card-text p {
+    margin: 0;
+    color: #555;
+}
+
+.project-link {
+    padding: 20px;
+}
+
+.dashboard {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #14532D;
+    font-weight: bold;
+}
+
+.dashboard-header h1 {
+    font-size: 3em;
+    background-image: linear-gradient(to right, #14532D, #CCE5C4, #F7C8D7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 15%;
+}
+
+.date {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    margin-top: 0;
+    background-image: linear-gradient(to right, #14532D, #CCE5C4, #F7C8D7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100%;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.dashboard h1 {
+    background-image: linear-gradient(to right, #14532D, #CCE5C4, #F7C8D7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100%;
+}
+
+.experience h2 {
+    text-align: center;
+}
+
+.projects h2 {
+    text-align: center;
+}
+
+.card li {
+    margin-bottom: 10px;
 }
