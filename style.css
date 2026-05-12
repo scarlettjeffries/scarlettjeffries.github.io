@@ -63,8 +63,8 @@ section.contact {
 }
 
 .home-photo {
-    width: 380px;
-    height: 380px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     padding: 6px;
     background: linear-gradient(to bottom left, #14532D, #CCE5C4, #F7C8D7);
@@ -109,14 +109,14 @@ section > div {
 }
 
 .home h2 {
-    font-size: 2.6em;
+    font-size: 3.0em;
     line-height: 1.2;
     margin-bottom: 0;
-    background-image: linear-gradient(to right, #14532D, #7CB987, #CCE5C4, #F7C8D7);
+    /*background-image: linear-gradient(to right, #14532D, #7CB987, #CCE5C4, #F7C8D7);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-size: 200%;   
+    background-size: 200%;   */
 }
 
 .home h1 {
@@ -152,12 +152,15 @@ section > div {
     font-size: 0.95em;
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
-    border: 3px solid transparent;
+    border: 0px solid transparent;
     border-radius: 2.5em;
     background: white;
     z-index: 1;
     overflow: hidden;
     cursor: pointer;
+    box-shadow: 
+        -6px 0px 16px rgba(244, 163, 183, 0.6),
+        6px 0px 16px rgba(20, 83, 45, 0.4);
 }
 
 .gradient-button::before {
@@ -210,7 +213,7 @@ section > div {
     position: absolute;
     inset: 0;
     z-index: -1;
-    padding: 3px; /* thickness of the "border" */
+    padding: 3px; 
     border-radius: inherit;
     background: linear-gradient(to left, #14532D, #CCE5C4, #F7C8D7);
     -webkit-mask: 
@@ -222,7 +225,7 @@ section > div {
         linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
     mask-composite: exclude;
-    filter: blur(20px); /* optional: blur(15px) for glow */
+    filter: blur(20px); 
 }
 
 .contact button span {
