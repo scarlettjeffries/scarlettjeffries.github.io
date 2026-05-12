@@ -10,26 +10,34 @@
         <script src="interactivity.js"></script>
     </head>
 
+    <script>
+        if (window.location.hash) history.replaceState(null, '', window.location.pathname);
+    </script>
+
     <body>
+        <nav class="navbar">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
         <section class="home">
             <div class="home-inner">
                 <div class="home-text">
-                    <h2>Hello!</h2>
+                    <h2>Hello! 👋</h2>
                     <h1>I'm Scarlett</h1>
-                    <p>As a naturally creative person with a technical background, I am continually learning and growing to create a positive impact on the world around me. Welcome to my corner of the internet!</p>
+                    <p>As a naturally <strong>creative</strong> person with a <strong>technical</strong> background, I am continually learning and growing to create a positive impact on the world around me. Nice to meet you!</p>
                     <div class="button-row">
                         <button id="learn-more" class="gradient-button" onclick="location.href='#about'">
-                            <span>About</span>
+                            <span>Learn More</span>
                         </button>
-                        <button class="gradient-button" onclick="location.href='#experience'">
-                            <span>Experience</span>
-                        </button>
-                        <button class="gradient-button" onclick="location.href='#projects'">
-                            <span>Projects</span>
-                        </button>
-                        <button class="gradient-button" onclick="location.href='#contact'">
-                            <span>Contact</span>
-                        </button>
+                        <a href="https://www.linkedin.com/in/scarlettjeffries/" target="_blank" class="icon-link">
+                            <img src="/assets/Linkedin_logo.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/scarlettjeffries/" target="_blank" class="icon-link">
+                            <img src="/assets/Github_logo.png" alt="GitHub">
+                        </a>
                     </div>
                 </div>
                 <div class="home-photo">
