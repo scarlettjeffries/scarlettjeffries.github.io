@@ -48,6 +48,7 @@ section.contact {
   letter-spacing: 0.03em;
 }
 
+/* homepage styling */
 .home-inner {
     display: flex;
     flex-wrap: wrap;
@@ -92,16 +93,11 @@ section > div {
     width: 100%;
 }
 
+/* about page styling */
+/* Removed multi-column flow here; using a two-column grid on .about-columns instead */
 .about > div {
-    column-count: 2;
-    column-gap: 40px;
-}
-
-.about > div > h2 {
-    column-span: all;
-    text-align: center;
-    font-size: 2.3em;
-    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section-row {
@@ -118,6 +114,113 @@ section > div {
 
 .section-row section > div {
     width: 100%;
+}
+.about-inner {
+    width: 100%;
+}
+
+.about-inner h2 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+.about-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+.about-columns p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.about-coursework {
+    flex: 1;
+}
+
+.about-coursework p {
+    margin: 0 0 8px;
+}
+
+.about-coursework ul {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.9;
+}
+
+/* gradient-bordered card — same technique as the button */
+.about-card {
+    position: relative;
+    border-radius: 20px;
+    /* outer element provides gradient border (thin padding acts as border thickness) */
+    padding: 4px;
+    background: linear-gradient(to right, #F7C8D7, #CCE5C4, #14532D);
+    z-index: 0;
+    margin-top: 40px;
+}
+
+/* keep the card spanning layout and avoid column breaks */
+.about-card {
+    column-span: all;
+    -webkit-column-span: all;
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+}
+
+/* masked gradient border sits directly behind the card's border */
+.about-card::after {
+    /* blurred halo behind the border */
+    content: '';
+    position: absolute;
+    inset: -14px; /* extend beyond the card for a soft halo */
+    z-index: -2;
+    border-radius: calc(20px + 14px);
+    background: linear-gradient(to right, #F7C8D7, #CCE5C4, #14532D);
+    filter: blur(22px);
+    opacity: 0.45;
+}
+
+/* inner white panel to guarantee opaque white interior */
+.about-card-inner {
+    background: white;
+    border-radius: calc(20px - 4px);
+    padding: 36px; /* original visual padding: 40px total inside the white box */
+    box-sizing: border-box;
+    position: relative;
+    z-index: 0;
+}
+
+.about-card-row {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.about-card-row:last-child {
+    margin-bottom: 0;
+}
+
+.about-card-row h3 {
+    font-size: 1.5em;
+    margin: 0;
+    min-width: 120px;
+}
+
+.about-card-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.about-card-details p {
+    margin: 0;
+    line-height: 1.6;
 }
 
 .home h2 {
@@ -251,6 +354,7 @@ section > div {
   object-fit: contain;
 }
 
+/* experience styling */
 .experience-row,
 .project-row {
     display: flex;
