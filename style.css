@@ -321,6 +321,7 @@ section > div {
     z-index: 1;
     overflow: hidden;
     margin: 5px;
+    cursor: pointer;
 }
 
 .contact button::before {
@@ -506,6 +507,14 @@ section > div {
 .projects h2 {
     text-align: center;
     font-size: 2.3em;
+}
+
+/* Center paragraph text in Experience and Projects sections */
+#experience .experience > p,
+#projects .projects > p,
+.experience-card-text p,
+.project-card-text p {
+    text-align: center;
 }
 
 .contact h2 {
