@@ -125,14 +125,6 @@ section > div {
     margin-bottom: 40px;
 }
 
-.about-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    margin-bottom: 40px;
-    align-items: start;
-}
-
 .about-columns p {
     margin: 0;
     line-height: 1.7;
