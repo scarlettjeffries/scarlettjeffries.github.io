@@ -6,8 +6,8 @@
         <meta charset="UTF-8">
         <title>Hello! I'm Scarlett</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <script src="interactivity.js"></script>
+        <link rel="stylesheet" href="style.css?v=2">
+        <script src="interactivity.js?v=9"></script>
     </head>
 
     <script>
@@ -16,6 +16,7 @@
 
     <body>
         <nav class="navbar">
+            <canvas id="navbar-canvas"></canvas>
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
@@ -26,7 +27,7 @@
         <section class="home">
             <div class="home-inner">
                 <div class="home-text">
-                    <h2>Hello! 👋</h2>
+                    <h2><span class="gradient-text">Hello!</span> <span class="emoji">👋</span></h2>
                     <h1>I'm Scarlett</h1>
                     <p>As a naturally <strong>creative</strong> person with a <strong>technical</strong> background, I am continually learning to create seamless digital experiences. Welcome to my corner of the internet!</p>
                     <div class="button-row">
@@ -48,61 +49,105 @@
             <div class="about-inner">
                 <h2>About</h2>
 
-                <div class="about-columns">
-                    <p>I am currently studying <strong>Cognitive Science</strong> with a specialization in <strong>Machine Learning</strong> and <strong>Neural Computation</strong>, with a minor in <strong>Data Science</strong> at the University of California, San Diego. My previous experience spans engineering, design, and marketing, giving me a well-rounded approach to developing new products.</p>
+                <div class="about-bio-card">
+                    <div class="about-bio-card-inner">
+                        <p>I am currently studying <strong>Cognitive Science</strong> with a specialization in <strong>Machine Learning</strong> and <strong>Neural Computation</strong>, with a minor in <strong>Data Science</strong> at the University of California, San Diego. My previous experience spans engineering, design, and marketing, giving me a well-rounded approach to developing new products.</p>
+                        <div class="about-interests">
+                            <h3 class="gradient-text">Interests</h3>
+                            <p>Tennis, Hiking, Skiing, Discovering new music, Watching movies (Letterboxd: <a href='https://letterboxd.com/scarlettxyz/' target="_blank" style="color: inherit;">@scarlettxyz</a>), Painting <a href='https://www.instagram.com/scardrws/' target="_blank" style="color: inherit;">@scardrws</a></p>
+                        </div>
+                    </div>
                 </div>
 
-            <div class="about-card">
-                <div class="about-card-inner">
-                <div class="about-card-row">
-                    <h3>Skills</h3>
-                    <div class="about-card-details">
-                        <p><strong>Languages:</strong> Python, Swift/SwiftUI, Java, TypeScript, JavaScript, SQL, R, HTML/CSS</p>
-                        <p><strong>Libraries/Frameworks:</strong> Node.js, Angular, Firebase, JSON, Pandas, scikit-learn, matplotlib, NumPy, SciPy</p>
-                        <p><strong>Design Tools:</strong> Figma, Canva, Adobe Creative Suite</p>
-                        <p><strong>AI Tools:</strong> Claude, GitHub Copilot, ChatGPT (Codex) </p>
-                        <p><strong>Other technical skills:</strong> Git, GitHub, VSCode, XCode, IntelliJ, Linux Systems, Jupyter Notebook, Microsoft Office</p>
+                <div class="about-skills">
+                    <h3 class="gradient-text">Skills</h3>
+                    <div class="skill-group">
+                        <span class="skill-label">Languages</span>
+                        <div class="skill-pills">
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">Swift/SwiftUI</span>
+                            <span class="skill-pill">Java</span>
+                            <span class="skill-pill">TypeScript</span>
+                            <span class="skill-pill">JavaScript</span>
+                            <span class="skill-pill">SQL</span>
+                            <span class="skill-pill">R</span>
+                            <span class="skill-pill">HTML/CSS</span>
+                        </div>
                     </div>
-                </div>
-                <div class="about-card-row">
-                    <h3>Interests</h3>
-                    <div class="about-card-details">
-                        <p><strong>Interests:</strong> Tennis, Hiking, Skiing, Discovering new music, Watching movies (Letterboxd: <a href='https://letterboxd.com/scarlettxyz/' target="_blank" style="color: inherit;">@scarlettxyz</a>), Painting <a href='https://www.instagram.com/scardrws/' target="_blank" style="color: inherit;">@scardrws</a></p>
+                    <div class="skill-group">
+                        <span class="skill-label">Libraries/Frameworks</span>
+                        <div class="skill-pills">
+                            <span class="skill-pill">Node.js</span>
+                            <span class="skill-pill">Angular</span>
+                            <span class="skill-pill">Firebase</span>
+                            <span class="skill-pill">JSON</span>
+                            <span class="skill-pill">Pandas</span>
+                            <span class="skill-pill">scikit-learn</span>
+                            <span class="skill-pill">matplotlib</span>
+                            <span class="skill-pill">NumPy</span>
+                            <span class="skill-pill">SciPy</span>
+                        </div>
                     </div>
-                </div>
+                    <div class="skill-group">
+                        <span class="skill-label">Other</span>
+                        <div class="skill-pills">
+                            <span class="skill-pill">Git</span>
+                            <span class="skill-pill">GitHub</span>
+                            <span class="skill-pill">Claude Code</span>
+                            <span class="skill-pill">GitHub Copilot</span>
+                            <span class="skill-pill">ChatGPT (Codex)</span>
+                            <span class="skill-pill">VSCode</span>
+                            <span class="skill-pill">XCode</span>
+                            <span class="skill-pill">IntelliJ</span>
+                            <span class="skill-pill">Linux Systems</span>
+                            <span class="skill-pill">Jupyter Notebook</span>
+                            <span class="skill-pill">Vercel</span>
+                            <span class="skill-pill">Figma</span>
+                            <span class="skill-pill">Canva</span>
+                            <span class="skill-pill">Adobe Creative Suite</span>
+                            <span class="skill-pill">Microsoft Office</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
             <!-- Experience Section -->
             <section id="experience" class="experience">
                 <div class="experience">
                     <h2>Experience</h2>
-                    <div class="experience-row">
-                        <a href="https://www.notion.so/priyaiyerdesign/ALLABOARD-a-collaborative-trip-planning-tool-2680617671ff8071a6def36018e5ba96" target="_blank" id="D-Co" class="experience-link">
-                            <div class="experience-photo"><img src="/assets/allaboard.png" alt="Design Co"></img></div>
-                            <div class="experience-card-text">
+                    <div class="experience-cards">
+                        <div class="experience-card">
+                            <div class="experience-card-inner">
+                                <h3>Software Engineer Intern @ Edura</h3>
+                                <p class="experience-date"><em>June 2026 – September 2026</em></p>
+                                <ul><li>TypeScript, Supabase (PostgreSQL), Next.js, Tailwind CSS, TanStack Query</li></ul>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <div class="experience-card-inner">
                                 <h3>Software Engineer @ Design Co</h3>
-                                <p>June 2025 - September 2025</p>
+                                <p class="experience-date"><em>July 2025 – September 2025</em></p>
+                                <ul><li>TypeScript, Angular, HTML/CSS, Figma</li></ul>
                             </div>
-                        </a>
+                        </div>
 
-                        <a href="https://smjeffries.notion.site/Software-Engineering-Park-dab3311edc894b949e68c59dcf744aa7" target="_blank" id="Park" class="experience-link">
-                            <div class="experience-photo"><img src="/assets/park_icon.png" alt="Park"></img></div>
-                            <div class="experience-card-text">
+                        <div class="experience-card">
+                            <div class="experience-card-inner">
                                 <h3>Software Engineer Intern @ Park</h3>
-                                <p>June 2024 - September 2024</p>
+                                <p class="experience-date"><em>June 2024 – September 2024</em></p>
+                                <ul><li>Swift/SwiftUI, Firebase, XCode</li></ul>
                             </div>
-                        </a>
+                        </div>
 
-                        <a href="https://smjeffries.notion.site/Design-Intern-KSDT-Radio-c083b8f8d4d34cd38abec2350d1317ee" target="_blank" id="KSDT" class="experience-link">
-                            <div class="experience-photo"><img src="/assets/ksdt_cat.png" alt="KSDT Radio"></img></div>
-                            <div class="experience-card-text">
+                        <div class="experience-card">
+                            <div class="experience-card-inner">
                                 <h3>Design Intern @ KSDT Radio</h3>
-                                <p>March 2024 - June 2024</p>
+                                <p class="experience-date"><em>March 2024 – June 2024</em></p>
+                                <ul><li>Figma, Canva, Adobe Creative Suite, Social Media Management</li></ul>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -115,17 +160,14 @@
                         <a href="https://scarlettjeffries.github.io/spotify-popularity-analysis/" target="_blank" id="Academic Projects" class="project-link">
                             <div class="project-photo"><img src="/assets/spotify.png" alt="Academic Projects"></img></div>
                             <div class="project-card-text"><h3>Danceability, Energy, and Spotify Song Popularity Analysis</h3></div>
-                            <p>Python, ML Modeling</p>
                         </a>
                         <a href="https://github.com/COGS108/Group041_WI26/blob/master/03-FinalProject.ipynb" target="_blank" id="Tennis Analysis" class="project-link">
                             <div class="project-photo"><img src="/assets/tennisanalysis.jpeg" alt="Tennis Analysis"></img></div>
                             <div class="project-card-text"><h3>Biological Factors on Professional Tennis Player Performance Analysis</h3></div>
-                            <p>Python, ML, Data Science</p>
                         </a>
                         <a href="https://studioghibli-pomodoro.netlify.app/" target="_blank"id="Pomodoro" class="project-link">
                             <div class="project-photo"><img src="/assets/Totoro_and_Mei.gif" alt="Pomodoro Study Timer"></img></div>
                             <div class="project-card-text"><h3>Pomodoro Study Timer</h3></div>
-                            <p>JavaScript, HTML/CSS</p>
                         </a>
                     </div>
                 </div>
