@@ -384,7 +384,6 @@ section > div {
     display: flex;
     gap: 20px;
     flex-wrap: nowrap;
-    justify-content: center;
     margin-top: 30px;
     overflow-x: auto;
     padding-bottom: 10px;
@@ -397,6 +396,8 @@ section > div {
     flex-direction: column;
     align-items: center;
     width: 280px;
+    min-width: 280px;
+    flex-shrink: 0;
     text-decoration: none;
     color: inherit;
     margin-bottom: 20px;
